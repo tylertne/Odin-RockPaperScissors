@@ -7,9 +7,9 @@
 //if the number is greater than 0.667 output scissors
 //return the output
 
-const computerOutputNumber = Math.random()
 
 function getComputerChoice(){
+    const computerOutputNumber = Math.random()
     if(computerOutputNumber < 0.3333){
         return 'Rock'
     }
@@ -29,22 +29,65 @@ function getComputerChoice(){
 //if the player selection is the same as the computer selection, return 'tie!'
 //if the combination is anything player losing, return 'you lose' and the choice that loses to the computers choice
 //if anything else is entered, that is invalid
-
 function playRound(playerSelection, computerSelection){
-    const playerChoice = playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase()
-    if(playerChoice === 'Rock' && computerSelection === 'Scissors' || playerChoice === 'Paper' && computerSelection === 'Rock' || playerChoice === 'Scissors' && computerSelection === 'Paper'){
-        return `You win! ${playerChoice} beats ${computerSelection}`
+    const playerChoice = playerSelection.toLowerCase()
+    if(playerChoice === 'rock' && computerSelection === 'Scissors' || playerChoice === 'paper' && computerSelection === 'Rock' || playerChoice === 'scissors' && computerSelection === 'Paper'){
+        return `PlayerWin`
     }
-    else if(playerChoice === 'Rock' && computerSelection === 'Paper' || playerChoice === 'Paper' && computerSelection === 'Scissors' || playerChoice === 'Scissors' && computerSelection === 'Rock'){
-        return `You lose! ${computerSelection} beats ${playerChoice}`
+    else if(playerChoice === 'rock' && computerSelection === 'Paper' || playerChoice === 'paper' && computerSelection === 'Scissors' || playerChoice === 'scissors' && computerSelection === 'Rock'){
+        return `ComputerWin`
     }
-    else if(playerChoice === computerSelection){
-        return `Tie! ${playerChoice} and ${computerSelection} are the same.`
+    else if(playerChoice === computerSelection.toLowerCase()){
+        return `Tie`
     }
     else{
-        return 'Invalid Input'
+        return 'Invalid'
     }
 }
-const playerSelection = "sCisSors";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+
+//no inputs
+//outputs are who won, and the score of the match. We want to continue to log the individual games as well.
+
+//create a function 
+//take in user input for playerSelection parameter of individual games
+//create variables to count score
+//run a loop that counts from game 1 to game 5
+//for each game, log the output of the game and add a score for the winner
+//whoever has a higher score at the end of 5 games, output a winner and a message
+
+function playGame() {
+    let playerScore = 0
+    let computerScore = 0
+    for(let i = 1; i <= 5; i++){
+        const playerChoice = prompt('Rock, Paper, or Scissors?');
+        const computerChoice = getComputerChoice();
+        const game = playRound(playerChoice,computerChoice)
+        switch(game){
+            case `PlayerWin`:
+            console.log(`You win! ${playerChoice[0].toUpperCase()+playerChoice.slice(1)} beats ${computerChoice[0].toUpperCase() + computerChoice.slice(1)}`)
+            playerScore++
+            break;
+            case `ComputerWin`:
+            console.log(`You lose! ${computerChoice[0].toUpperCase()+computerChoice.slice(1)} beats ${playerChoice[0].toUpperCase() + playerChoice.slice(1)}`)
+            computerScore++
+            break;
+            case `Tie`:
+            console.log(`Tie, ${computerChoice[0].toUpperCase()+computerChoice.slice(1)} and ${playerChoice[0].toUpperCase()+playerChoice.slice(1)}`)
+            break;
+            case `Invalid`:
+            console.log('Invalid, try again')
+            i--
+            break;
+        }
+    }
+    if(playerScore > computerScore){
+        console.log(`You win the series! ${playerScore} to ${computerScore}`)
+    }
+    else if(playerScore < computerScore){
+        console.log(`You lose the series! ${playerScore} to ${computerScore}`)
+    }
+    else if(playerScore === computerScore){
+        console.log(`Series Tie: ${playerScore} to ${computerScore}`)
+    }
+}
+playGame()
