@@ -55,6 +55,10 @@ function playRound(playerSelection, computerSelection){
 //for each game, log the output of the game and add a score for the winner
 //whoever has a higher score at the end of 5 games, output a winner and a message
 
+function titleCase (word){
+    return word[0].toUpperCase() + word.slice(1).toLowerCase()
+}
+
 function playGame() {
     let playerScore = 0
     let computerScore = 0
@@ -64,15 +68,15 @@ function playGame() {
         const game = playRound(playerChoice,computerChoice)
         switch(game){
             case `PlayerWin`:
-            console.log(`You win! ${playerChoice[0].toUpperCase()+playerChoice.slice(1).toLowerCase()} beats ${computerChoice[0].toUpperCase() + computerChoice.slice(1).toLowerCase()}`)
+            console.log(`You win! ${titleCase(playerChoice)} beats ${titleCase(computerChoice)}`)
             playerScore++
             break;
             case `ComputerWin`:
-            console.log(`You lose! ${computerChoice[0].toUpperCase()+computerChoice.slice(1).toLowerCase()} beats ${playerChoice[0].toUpperCase() + playerChoice.slice(1).toLowerCase()}`)
+            console.log(`You lose! ${titleCase(computerChoice)} beats ${titleCase(playerChoice)}`)
             computerScore++
             break;
             case `Tie`:
-            console.log(`Tie, ${computerChoice[0].toUpperCase()+computerChoice.slice(1).toLowerCase()} and ${playerChoice[0].toUpperCase()+playerChoice.slice(1).toLowerCase()}`)
+            console.log(`Tie, ${titleCase(computerChoice)} and ${titleCase(playerChoice)}`)
             break;
             case `Invalid`:
             console.log('Invalid, try again')
