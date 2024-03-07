@@ -64,15 +64,15 @@ function playGame() {
         const game = playRound(playerChoice,computerChoice)
         switch(game){
             case `PlayerWin`:
-            console.log(`You win! ${playerChoice[0].toUpperCase()+playerChoice.slice(1)} beats ${computerChoice[0].toUpperCase() + computerChoice.slice(1)}`)
+            console.log(`You win! ${playerChoice[0].toUpperCase()+playerChoice.slice(1).toLowerCase()} beats ${computerChoice[0].toUpperCase() + computerChoice.slice(1).toLowerCase()}`)
             playerScore++
             break;
             case `ComputerWin`:
-            console.log(`You lose! ${computerChoice[0].toUpperCase()+computerChoice.slice(1)} beats ${playerChoice[0].toUpperCase() + playerChoice.slice(1)}`)
+            console.log(`You lose! ${computerChoice[0].toUpperCase()+computerChoice.slice(1).toLowerCase()} beats ${playerChoice[0].toUpperCase() + playerChoice.slice(1).toLowerCase()}`)
             computerScore++
             break;
             case `Tie`:
-            console.log(`Tie, ${computerChoice[0].toUpperCase()+computerChoice.slice(1)} and ${playerChoice[0].toUpperCase()+playerChoice.slice(1)}`)
+            console.log(`Tie, ${computerChoice[0].toUpperCase()+computerChoice.slice(1).toLowerCase()} and ${playerChoice[0].toUpperCase()+playerChoice.slice(1).toLowerCase()}`)
             break;
             case `Invalid`:
             console.log('Invalid, try again')
