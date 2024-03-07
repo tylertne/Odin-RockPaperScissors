@@ -90,4 +90,3 @@ function playGame() {
         console.log(`Series Tie: ${playerScore} to ${computerScore}`)
     }
 }
-playGame()
