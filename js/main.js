@@ -31,14 +31,16 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-
+const resultsArea = document.querySelector('ul')
 const buttonsArea = document.querySelector('.buttons')
 function buttonGame (e) {
     let player = e.target.className
-    console.log(player)
-    const resultsArea = document.querySelector('.results')
+
+    const results = document.createElement('li')
     const game = (playRound(player,getComputerChoice()))
-    resultsArea.textContent += game
+    results.classList.add('results')
+    results.textContent += game
+    resultsArea.appendChild(results)
 }
 
 buttonsArea.addEventListener('click', buttonGame)
@@ -48,7 +50,7 @@ buttonsArea.addEventListener('click', buttonGame)
 
 
 
-function titleCase (word){
-    return word[0].toUpperCase() + word.slice(1).toLowerCase()
-}
+// function titleCase (word){
+//     return word[0].toUpperCase() + word.slice(1).toLowerCase()
+// }
 

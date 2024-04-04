@@ -13,14 +13,15 @@ button{
 }
 
 .results{
-    width: 80%;
-    margin: 0 auto;
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
     color: blue;
     text-align: center;
+    list-style: none;
 }
-
+ul{
+    padding-left: 0px;
+}
 .scores{
     display: flex;
     justify-content: space-between;
