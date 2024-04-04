@@ -36,30 +36,19 @@ const buttonsArea = document.querySelector('.buttons')
 function buttonGame (e) {
     let player = e.target.className
     console.log(player)
-    console.log(playRound(player,getComputerChoice()))
+    const resultsArea = document.querySelector('.results')
+    const game = (playRound(player,getComputerChoice()))
+    resultsArea.textContent += game
 }
 
 buttonsArea.addEventListener('click', buttonGame)
+
+
+
+
+
 
 function titleCase (word){
     return word[0].toUpperCase() + word.slice(1).toLowerCase()
 }
 
-
-//     switch(game){
-//         case `PlayerWin`:
-//         console.log(`You win! ${titleCase(playerChoice)} beats ${(computerChoice)}`)
-//         playerScore++
-//         break;
-//         case `ComputerWin`:
-//         console.log(`You lose! ${(computerChoice)} beats ${titleCase(playerChoice)}`)
-//         computerScore++
-//         break;
-//         case `Tie`:
-//         console.log(`Tie, ${(computerChoice)} and ${titleCase(playerChoice)}`)
-//         break;
-//         case `Invalid`:
-//         console.log('Invalid, try again')
-//         i--
-//         break;
-// }

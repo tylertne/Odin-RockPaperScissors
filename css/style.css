@@ -18,4 +18,23 @@ button{
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
     color: blue;
+    text-align: center;
+}
+
+.scores{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+}
+.playerScore, .computerScore{
+    border: 2px solid black;
+    padding: 20px 50px;
+    font-size: 10rem;
+    text-align: center;
+}
+
+.playerScore::first-line, .computerScore::first-line{
+    font-size: 2rem;
+    color: blue
 }
