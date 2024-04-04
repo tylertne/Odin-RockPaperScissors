@@ -3,13 +3,14 @@
     gap: 50px;
     padding: 2%;
 }
-button{
+.rock, .paper, .scissors{
     flex: 1;
     height: 80px;
     background-color: blue;
     color: white;
     font-family: 'Courier New', Courier, monospace;
     font-size: 2rem;
+    border-radius: 10px;
 }
 button:hover{
     background-color: orange;
@@ -54,10 +55,12 @@ ul{
     border-radius: 20px;
     margin: 20px auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 5px 5px 5px 5px black;
     max-width: 900px;
+    gap: 20px;
 }
 .winner span{
     font-size: 4rem;
@@ -66,4 +69,17 @@ ul{
 }
 .hidden{
     display: none;
+}
+.reset{
+    border-radius: 10px;
+    height: 80px;
+    width: 30%;
+    background-color: red;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+}
+.reset:hover{
+    background-color: white;
+    color: red;
 }
