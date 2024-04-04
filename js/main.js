@@ -32,42 +32,34 @@ function playRound(playerSelection, computerSelection){
 }
 
 
+const buttonsArea = document.querySelector('.buttons')
+function buttonGame (e) {
+    let player = e.target.className
+    console.log(player)
+    console.log(playRound(player,getComputerChoice()))
+}
+
+buttonsArea.addEventListener('click', buttonGame)
+
 function titleCase (word){
     return word[0].toUpperCase() + word.slice(1).toLowerCase()
 }
 
-function playGame() {
-    let playerScore = 0
-    let computerScore = 0
-    for(let i = 1; i <= 5; i++){
-        const playerChoice = prompt('Rock, Paper, or Scissors?');
-        const computerChoice = getComputerChoice();
-        const game = playRound(playerChoice,computerChoice)
-        switch(game){
-            case `PlayerWin`:
-            console.log(`You win! ${titleCase(playerChoice)} beats ${(computerChoice)}`)
-            playerScore++
-            break;
-            case `ComputerWin`:
-            console.log(`You lose! ${(computerChoice)} beats ${titleCase(playerChoice)}`)
-            computerScore++
-            break;
-            case `Tie`:
-            console.log(`Tie, ${(computerChoice)} and ${titleCase(playerChoice)}`)
-            break;
-            case `Invalid`:
-            console.log('Invalid, try again')
-            i--
-            break;
-        }
-    }
-    if(playerScore > computerScore){
-        console.log(`You win the series! ${playerScore} to ${computerScore}`)
-    }
-    else if(playerScore < computerScore){
-        console.log(`You lose the series! ${playerScore} to ${computerScore}`)
-    }
-    else if(playerScore === computerScore){
-        console.log(`Series Tie: ${playerScore} to ${computerScore}`)
-    }
-}
+
+//     switch(game){
+//         case `PlayerWin`:
+//         console.log(`You win! ${titleCase(playerChoice)} beats ${(computerChoice)}`)
+//         playerScore++
+//         break;
+//         case `ComputerWin`:
+//         console.log(`You lose! ${(computerChoice)} beats ${titleCase(playerChoice)}`)
+//         computerScore++
+//         break;
+//         case `Tie`:
+//         console.log(`Tie, ${(computerChoice)} and ${titleCase(playerChoice)}`)
+//         break;
+//         case `Invalid`:
+//         console.log('Invalid, try again')
+//         i--
+//         break;
+// }
