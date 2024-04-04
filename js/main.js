@@ -46,7 +46,7 @@ function buttonGame (e) {
     const results = document.createElement('li')
     results.classList.add('results')
     const game = (playRound(player,getComputerChoice()))
-    results.textContent += game
+    results.textContent = game
     resultsArea.appendChild(results)
     switch(game){
         case `Player Wins`:
@@ -67,15 +67,6 @@ function buttonGame (e) {
 }
 
 
-
 buttonsArea.addEventListener('click', buttonGame)
 
-
-
-
-
-
-// function titleCase (word){
-//     return word[0].toUpperCase() + word.slice(1).toLowerCase()
-// }
 
