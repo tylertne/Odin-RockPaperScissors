@@ -35,6 +35,8 @@ const resultsArea = document.querySelector('ul')
 const buttonsArea = document.querySelector('.buttons')
 const playerScore = document.querySelector('.playerNum')
 const computerScore = document.querySelector('.computerNum')
+const winnerBox = document.querySelector('.winner')
+const winnerBoxText = document.querySelector('.winner span')
 playerScore.textContent = 0
 computerScore.textContent = 0
 
@@ -54,7 +56,17 @@ function buttonGame (e) {
         computerScore.textContent++
         break;
     }
+    if(playerScore.textContent >= 5){
+        winnerBox.classList.remove('hidden')
+        winnerBoxText.textContent = 'Player Wins'
+    }
+    else if(computerScore.textContent >= 5){
+        winnerBox.classList.remove('hidden')
+        winnerBoxText.textContent = 'Computer Wins'
+    }
 }
+
+
 
 buttonsArea.addEventListener('click', buttonGame)
 
