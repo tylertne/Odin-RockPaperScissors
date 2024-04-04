@@ -25,17 +25,18 @@ ul{
 .scores{
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    max-width: 800px;
     margin: 0 auto;
 }
 .playerScore, .computerScore{
     border: 2px solid black;
-    padding: 20px 50px;
+    padding: 20px 0px;
     font-size: 10rem;
     text-align: center;
+    width: 200px;
 }
 
 .playerScore::first-line, .computerScore::first-line{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: blue
 }

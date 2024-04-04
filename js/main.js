@@ -33,12 +33,14 @@ function playRound(playerSelection, computerSelection){
 
 const resultsArea = document.querySelector('ul')
 const buttonsArea = document.querySelector('.buttons')
+
+
+
 function buttonGame (e) {
     let player = e.target.className
-
     const results = document.createElement('li')
-    const game = (playRound(player,getComputerChoice()))
     results.classList.add('results')
+    const game = (playRound(player,getComputerChoice()))
     results.textContent += game
     resultsArea.appendChild(results)
 }
