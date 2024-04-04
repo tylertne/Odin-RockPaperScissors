@@ -37,6 +37,7 @@ const playerScore = document.querySelector('.playerNum')
 const computerScore = document.querySelector('.computerNum')
 const winnerBox = document.querySelector('.winner')
 const winnerBoxText = document.querySelector('.winner span')
+const resetBtn = document.querySelector('.reset')
 playerScore.textContent = 0
 computerScore.textContent = 0
 
@@ -66,7 +67,12 @@ function buttonGame (e) {
     }
 }
 
+function reset(){
+    resultsArea.textContent = ''
+    playerScore.textContent = 0
+    computerScore.textContent = 0
+    winnerBox.classList.add('hidden')
+}
 
 buttonsArea.addEventListener('click', buttonGame)
-
-
+resetBtn.addEventListener('click', reset)
