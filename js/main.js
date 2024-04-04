@@ -33,7 +33,10 @@ function playRound(playerSelection, computerSelection){
 
 const resultsArea = document.querySelector('ul')
 const buttonsArea = document.querySelector('.buttons')
-
+const playerScore = document.querySelector('.playerNum')
+const computerScore = document.querySelector('.computerNum')
+playerScore.textContent = 0
+computerScore.textContent = 0
 
 
 function buttonGame (e) {
@@ -43,6 +46,14 @@ function buttonGame (e) {
     const game = (playRound(player,getComputerChoice()))
     results.textContent += game
     resultsArea.appendChild(results)
+    switch(game){
+        case `Player Wins`:
+        playerScore.textContent++
+        break;
+        case `Computer Wins`:
+        computerScore.textContent++
+        break;
+    }
 }
 
 buttonsArea.addEventListener('click', buttonGame)
