@@ -1,0 +1,13 @@
+.buttons{
+    display: flex;
+    gap: 50px;
+    padding: 2%;
+}
+button{
+    flex: 1;
+    height: 80px;
+    background-color: blue;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+}
