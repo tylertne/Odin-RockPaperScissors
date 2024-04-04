@@ -11,7 +11,9 @@ button{
     font-family: 'Courier New', Courier, monospace;
     font-size: 2rem;
 }
-
+button:hover{
+    background-color: orange;
+}
 .results{
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;

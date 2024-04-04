@@ -18,10 +18,10 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
     const playerChoice = playerSelection.toLowerCase()
     if(playerChoice === 'rock' && computerSelection === 'Scissors' || playerChoice === 'paper' && computerSelection === 'Rock' || playerChoice === 'scissors' && computerSelection === 'Paper'){
-        return `PlayerWin`
+        return `Player Wins`
     }
     else if(playerChoice === 'rock' && computerSelection === 'Paper' || playerChoice === 'paper' && computerSelection === 'Scissors' || playerChoice === 'scissors' && computerSelection === 'Rock'){
-        return `ComputerWin`
+        return `Computer Wins`
     }
     else if(playerChoice === computerSelection.toLowerCase()){
         return `Tie`
